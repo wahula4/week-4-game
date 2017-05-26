@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Crystal Collector</title>
+	    <!-- Added link to the jQuery Library -->
+	    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	    <!-- Added a link the my CSS -->
+	    <link rel="stylesheet" href="assets/css/style.css">
+	    <!-- Added a link to Bootstrap-->
+	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
 
+	<body>
+	<div class="container">
+		<div class="jumbotron">
+      		<h1 class="text-center"><strong>Crystal Collector</strong></h1>
+      		<hr>
+     			 <div class="text-center">
+        			<p><strong>Instructions</strong></p>
+        			<ul>
+        				<li>You will be given a random number at the start of the game.</li>
+        				<li>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</li>
+        				<li>You win the game by matching your total score to the random number.  You lose the game if your number goes above the random number.</li>
+        				<li>The value of each crystal is hidden from you until you click on it.</li>
+        				<li>Each time the game starts, the value of each crystal will change.</li>
+        			</ul>
+     			 </div>
+   		 </div>
+		<div id="crystals">
+			<button class="button" style="background: url(assets/images/blue-crystal.jpg)"></button>
+			<button class="button" style="background: url(assets/images/green-crystal.jpg)"></button>
+			<button class="button" style="background: url(assets/images/red-crystal.jpg)"></button>
+			<button class="button" style="background: url(assets/images/yellow-crystal.jpg)"></button>
+		</div>
+		<div id="target"></div>
+		<div id="current-total"></div>
+		<div id="wins-and-losses"></div>
+
+   	</div>
+	<script type="text/javascript">
+
+	$(document).ready(function() {
+
+	var counter = 0;
+	var wins = 0;
+	var losses = 0;
+
+	var imageArray = ["assets/images/blue-crystal.jpg","assets/images/green-crystal.jpg","assets/images/red-crystal.jpg","assets/images/yellow-crystal.jpg"];
+
+	var targetNumber = Math.floor((Math.random() * 120) + 20);
+
+	var crystalValue = [];
+
+		for (var i = 0; i < imageArray.length; i++) {
+
+    		var crystalValue =Math.floor((Math.random() * 12) + 1); 
+    		console.log(crystalValue);
+    		$(".button").
+    		}
+
+    $("#target").append(targetNumber);
+
+     $(".button").on("click", function() {
+
+
+ 	if (counter === targetNumber) {
+ 		alert("You Win!");
+ 		wins++;
+      $("wins-and-losses").append("Wins " + wins);
+    }
+
+    else if (counter >= targetNumber) {
+    	alert("You Lose!");
+    	losses++;
+       $("wins-and-losses").append("Losses: " + losses);
+    }
+
+     });
+
+
+
+  // function makeButton(crystal) {
+  //         var newButton = $("<button>");
+  //         $("#crystals").append(newButton);
+  //       }
+
+  //     for (var i = 0; i < imageArray.length; i++) {
+  //         makeButton(imageArray[i]);
+
+    		// var crystalImage = $("<img>");
+   	 	// 	$("#crystals").append(imageArray[i]);
+});
+	</script>
+		
+	<script src = "javascript/game.js"></script>
+	</body>
+</html>
