@@ -28,68 +28,77 @@
      			 </div>
    		 </div>
 		<div id="crystals">
-			<button class="button" style="background: url(assets/images/blue-crystal.jpg)"></button>
-			<button class="button" style="background: url(assets/images/green-crystal.jpg)"></button>
-			<button class="button" style="background: url(assets/images/red-crystal.jpg)"></button>
-			<button class="button" style="background: url(assets/images/yellow-crystal.jpg)"></button>
+			<button class="button blue" style="background: url(assets/images/blue-crystal.jpg)"></button>
+			<button class="button green" style="background: url(assets/images/green-crystal.jpg)"></button>
+			<button class="button red" style="background: url(assets/images/red-crystal.jpg)"></button>
+			<button class="button yellow" style="background: url(assets/images/yellow-crystal.jpg)"></button>
 		</div>
-		<div id="target"></div>
-		<div id="current-total"></div>
-		<div id="wins-and-losses"></div>
+		<div id="target"><span>Target Number: </span></div>
+		<div id="current-total"><span>Current Total: </span></div>
+		<div id="wins-and-losses">
+			<p id="wins">Wins: </p>
+			<p id="losses">Losses: </p>
+		</div>
 
    	</div>
 	<script type="text/javascript">
 
 	$(document).ready(function() {
 
+		function startGame() {
+			var counter = 0;
+			$(".data-crystalvalue").empty();
+			var crystalValue = 0;
+};
+
+	
 	var counter = 0;
 	var wins = 0;
 	var losses = 0;
 
-	var imageArray = ["assets/images/blue-crystal.jpg","assets/images/green-crystal.jpg","assets/images/red-crystal.jpg","assets/images/yellow-crystal.jpg"];
+	var blueCrystal = Math.floor((Math.random() * 12) + 1);
+	var greenCrystal = Math.floor((Math.random() * 12) + 1);
+	var redCrystal = Math.floor((Math.random() * 12) + 1);
+	var yellowCrystal = Math.floor((Math.random() * 12) + 1);
 
 	var targetNumber = Math.floor((Math.random() * 120) + 20);
 
-	var crystalValue = [];
 
-		for (var i = 0; i < imageArray.length; i++) {
-
-    		var crystalValue =Math.floor((Math.random() * 12) + 1); 
-    		console.log(crystalValue);
-    		$(".button").
-    		}
+	$(".blue").attr("data-crystalvalue", blueCrystal);
+	$(".green").attr("data-crystalvalue", greenCrystal);
+	$(".red").attr("data-crystalvalue", redCrystal);
+	$(".yellow").attr("data-crystalvalue", yellowCrystal);
 
     $("#target").append(targetNumber);
 
+
      $(".button").on("click", function() {
 
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+    // We then add the crystalValue to the user's "counter" which is a global variable.
+    // Every click, from every crystal adds to the global counter.
+    counter += crystalValue;
+    $("#current-total").html("Current Total: " + counter);
 
  	if (counter === targetNumber) {
  		alert("You Win!");
  		wins++;
-      $("wins-and-losses").append("Wins " + wins);
+      $("#wins").html("Wins: " + wins);
+      startGame();
     }
 
     else if (counter >= targetNumber) {
     	alert("You Lose!");
     	losses++;
-       $("wins-and-losses").append("Losses: " + losses);
+       $("#losses").html("Losses: " + losses);
+       startGame();
     }
+
+    
 
      });
 
-
-
-  // function makeButton(crystal) {
-  //         var newButton = $("<button>");
-  //         $("#crystals").append(newButton);
-  //       }
-
-  //     for (var i = 0; i < imageArray.length; i++) {
-  //         makeButton(imageArray[i]);
-
-    		// var crystalImage = $("<img>");
-   	 	// 	$("#crystals").append(imageArray[i]);
 });
 	</script>
 		
