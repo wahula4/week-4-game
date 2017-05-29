@@ -1,22 +1,3 @@
-function reset() {
-	var counter = 0;
-
-	var blueCrystal = Math.floor((Math.random() * 12) + 1);
-	var greenCrystal = Math.floor((Math.random() * 12) + 1);
-	var redCrystal = Math.floor((Math.random() * 12) + 1);
-	var yellowCrystal = Math.floor((Math.random() * 12) + 1);
-
-	var targetNumber = Math.floor((Math.random() * 120) + 20);
-
-	$(".blue").attr("data-crystalvalue", blueCrystal);
-	$(".green").attr("data-crystalvalue", greenCrystal);
-	$(".red").attr("data-crystalvalue", redCrystal);
-	$(".yellow").attr("data-crystalvalue", yellowCrystal);
-
-   	$("#target").html("Target Number: " + targetNumber);
-
-	$("#current-total").html("Current Total: " + counter);
-   };
 	var wins = 0;
 	var losses = 0;
 
@@ -28,6 +9,27 @@ function reset() {
 	var yellowCrystal = Math.floor((Math.random() * 12) + 1);
 
 	var targetNumber = Math.floor((Math.random() * 120) + 20);
+
+function reset() {
+	counter = 0;
+
+	blueCrystal = Math.floor((Math.random() * 12) + 1);
+	greenCrystal = Math.floor((Math.random() * 12) + 1);
+	redCrystal = Math.floor((Math.random() * 12) + 1);
+	yellowCrystal = Math.floor((Math.random() * 12) + 1);
+
+	targetNumber = Math.floor((Math.random() * 120) + 20);
+
+	$(".blue").attr("data-crystalvalue", blueCrystal);
+	$(".green").attr("data-crystalvalue", greenCrystal);
+	$(".red").attr("data-crystalvalue", redCrystal);
+	$(".yellow").attr("data-crystalvalue", yellowCrystal);
+
+   	$("#target").html("Target Number: " + targetNumber);
+
+	$("#current-total").html("Current Total: " + counter);
+   };
+	
 
 	$(".blue").attr("data-crystalvalue", blueCrystal);
 	$(".green").attr("data-crystalvalue", greenCrystal);

@@ -3,6 +3,8 @@ button {
 	width: 100px;
 }
 
-#crystals {
-
+body { 
+  background: url(https://i.ytimg.com/vi/cbpKj5O59Ks/maxresdefault.jpg) no-repeat center center fixed; 
+  background-size: cover;
 }
+
