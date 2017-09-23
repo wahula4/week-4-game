@@ -3,11 +3,6 @@ button {
 	width: 100px;
 }
 
-body {
-  background: url('../images/daryan-shamkhali-224921.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-
 .jumbotron {
 	padding-top: 5px;
 	padding-bottom: 10px;
