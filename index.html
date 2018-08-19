@@ -1,56 +1,62 @@
-<!-- Need to put css after bootstrap -->
-
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <title>Crystal Collector</title>
-	    <!-- Added link to the jQuery Library -->
-	    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-	    <!-- Added a link to Bootstrap-->
-	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    	    <!-- Added a link the my CSS -->
-	    <link rel="stylesheet" href="assets/css/style.css">
-	</head>
 
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Crystal Collector</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
 	<div class="container">
 		<div class="jumbotron">
-      		<h1 class="text-center"><strong>Crystal Collector</strong></h1>
-      		<hr>
-     			 <div>
-        			<p class="text-center"><strong>Instructions</strong></p>
-        			<ol>
-        				<li>You will be given a random number at the start of the game.</li>
-        				<li>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</li>
-        				<li>You win the game by matching your total score to the random number.  You lose the game if your number goes above the random number.</li>
-        				<li>The value of each crystal is hidden from you until you click on it.</li>
-        				<li>Each time the game starts, the value of each crystal will change.</li>
-        			</ol>
-     			 </div>
-   		 </div>
-   	<div class="container">
-   		<div class="row">
-   			<div id="target" class="col-md-6 h2 text-center"><span>Target: </span></div>
-			<div id="current-total" class="col-md-6 h2 text-center"><span>Current Total: </span></div>
+			<h1 class="text-center">
+				<strong>Crystal Collector</strong>
+			</h1>
+			<hr>
+			<div>
+				<p class="text-center">
+					<strong>Instructions</strong>
+				</p>
+				<ol>
+					<li>You will be given a random number at the start of the game.</li>
+					<li>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</li>
+					<li>You win the game by matching your total score to the random number. You lose the game if your number goes above the
+						random number.</li>
+					<li>The value of each crystal is hidden from you until you click on it.</li>
+					<li>Each time the game starts, the value of each crystal will change.</li>
+				</ol>
+			</div>
 		</div>
-		<div class="row">
-		<div id="crystals" class="col-md-12 text-center">
-			<button class="button blue" style="background: url(assets/images/blue-crystal.jpg)"></button>
-			<button class="button green" style="background: url(assets/images/green-crystal.jpg)"></button>
-			<button class="button red" style="background: url(assets/images/red-crystal.jpg)"></button>
-			<button class="button yellow" style="background: url(assets/images/yellow-crystal.jpg)"></button>
-		</div>
-		</div>
-		<div class="row">
-		<div id="wins-and-losses" class="h2 text-center">
-			<p id="wins">Wins: </p>
-			<p id="losses">Losses: </p>
-		</div>
+		<div class="container">
+			<div class="row">
+				<div id="target" class="col-md-6 h2 text-center">
+					<span>Target: </span>
+				</div>
+				<div id="current-total" class="col-md-6 h2 text-center">
+					<span>Current Total: </span>
+				</div>
+			</div>
+			<div class="row">
+				<div id="crystals" class="col-md-12 text-center">
+					<button class="button blue" style="background: url(assets/images/blue-crystal.jpg)"></button>
+					<button class="button green" style="background: url(assets/images/green-crystal.jpg)"></button>
+					<button class="button red" style="background: url(assets/images/red-crystal.jpg)"></button>
+					<button class="button yellow" style="background: url(assets/images/yellow-crystal.jpg)"></button>
+				</div>
+			</div>
+			<div class="row">
+				<div id="wins-and-losses" class="h2 text-center">
+					<p id="wins">Wins: </p>
+					<p id="losses">Losses: </p>
+				</div>
+			</div>
 		</div>
 	</div>
-   	</div>
-		<script src = "assets/javascript/game.js"></script>
-	</body>
+	<script src="assets/javascript/game.js"></script>
+</body>
+
 </html>

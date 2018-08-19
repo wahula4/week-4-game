@@ -1,6 +1,7 @@
 Crystal Collector
 
 This project is an example of how to dynamically update the HTML using jQuery.
+ES6 syntax
 
 You will be given a random number at the start of the game.
 There are four crystals, by clicking on a crystal you will add a specific amount of points to your total score.
