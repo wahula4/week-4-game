@@ -1,10 +1,10 @@
 	// initial values for wins, losses, and counter
-	var wins = 0;
-	var losses = 0;
-	var counter = 0;
+	let wins = 0;
+	let losses = 0;
+	let counter = 0;
 
 	// crystal values start at 0
-	var crystals = {
+	let crystals = {
 		blue: 0,
 		red: 0,
 		yellow: 0,
@@ -12,14 +12,14 @@
 	};
 
 	// randomly generate a value between 19 and 120 for the target
-	var targetNumber = Math.floor((Math.random() * 120) + 20);
+	let targetNumber = Math.floor((Math.random() * 120) + 20);
 	// dynamically add the target value to the DOM
 	$("#target").html("Target Number: " + targetNumber);
 
 	init = () => {
 		// randomly generate a value between 1 and 12 for each crystal
-		for (var prop in crystals) {
-			var randomvalue = Math.floor((Math.random() * 12) + 1);
+		for (let prop in crystals) {
+			let randomvalue = Math.floor((Math.random() * 12) + 1);
 			crystals[prop] = randomvalue;
 			$("." + prop).attr("data-crystalvalue", randomvalue);
 		}
@@ -29,16 +29,16 @@
 	reset = () => {
 		counter = 0;
 
-		var crystals = {
+		let crystals = {
 			blue: 0,
 			red: 0,
 			yellow: 0,
 			green: 0
 		};
 
-		for (var prop in crystals) {
+		for (let prop in crystals) {
 			// randomly generate a value between 1 and 12 for each crystal
-			var randomvalue = Math.floor((Math.random() * 12) + 1);
+			let randomvalue = Math.floor((Math.random() * 12) + 1);
 			crystals[prop] = randomvalue;
 			$("." + prop).attr("data-crystalvalue", randomvalue);
 		}
@@ -53,7 +53,7 @@
 	// on button click
 	$(".button").click(function () {
 
-		var crystalValue = ($(this).attr("data-crystalvalue"));
+		let crystalValue = ($(this).attr("data-crystalvalue"));
 		crystalValue = parseInt(crystalValue);
 		// Every click, from every crystal adds to the global counter.
 		counter += crystalValue;
